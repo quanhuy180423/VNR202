@@ -1,6 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  typedRoutes: true,
   images: {
     remotePatterns: [
       {
@@ -78,6 +79,91 @@ const nextConfig: NextConfig = {
       {
         protocol: "https",
         hostname: "4.bp.blogspot.com",
+      },
+      // New domains for ExploreSection
+      {
+        protocol: "https",
+        hostname: "api.toploigiai.vn",
+      },
+      {
+        protocol: "https",
+        hostname: "tusachonline.files.wordpress.com",
+      },
+      {
+        protocol: "https",
+        hostname: "media-cdn-v2.laodong.vn",
+      },
+      {
+        protocol: "https",
+        hostname: "tse4.mm.bing.net",
+      },
+      {
+        protocol: "https",
+        hostname: "tse1.mm.bing.net",
+      },
+      {
+        protocol: "https",
+        hostname: "bna.1cdn.vn",
+      },
+      {
+        protocol: "https",
+        hostname: "cdnmedia.baotintuc.vn",
+      },
+      {
+        protocol: "https",
+        hostname: "bbt.1cdn.vn",
+      },
+      {
+        protocol: "https",
+        hostname: "luatduonggia.vn",
+      },
+      {
+        protocol: "https",
+        hostname: "media.vov.vn",
+      },
+      {
+        protocol: "https",
+        hostname: "redsvn.net",
+      },
+      {
+        protocol: "https",
+        hostname: "cdnimage.daihoidang.vn",
+      },
+      {
+        protocol: "https",
+        hostname: "via.placeholder.com",
+      },
+      {
+        protocol: "https",
+        hostname: "tapchicongsan.org.vn",
+      },
+      {
+        protocol: "https",
+        hostname: "xonnews.net",
+      },
+      {
+        protocol: "https",
+        hostname: "cdn2.olm.vn",
+      },
+      {
+        protocol: "https",
+        hostname: "baotanglichsu.vn",
+      },
+      {
+        protocol: "https",
+        hostname: "cualo.vn",
+      },
+      {
+        protocol: "https",
+        hostname: "tuyengiaoangiang.vn",
+      },
+      {
+        protocol: "https",
+        hostname: "file3.qdnd.vn",
+      },
+      {
+        protocol: "https",
+        hostname: "nghiencuuquocte.org",
       },
     ],
   },

@@ -208,7 +208,7 @@ const ContextSection = () => {
       description: "Tấn công quân Quan Đông ở Mãn Châu",
       icon: Users,
       imgUrl:
-        "https://vnanet.vn/Data/Articles/2020/08/20/4972531/vna_potal_75_nam_phat_xit_nhat_dau_hang_quan_dong_minh_trong_the_chien_thu_hai_1945_%E2%80%93_2020_ket_thuc_cuoc_chien_tan_khoc_nhat_trong_lic_081320331_stand.jpg",
+        "https://nghiencuuquocte.org/wp-content/uploads/2016/08/harbin.jpg",
       detailedContent: {
         overview:
           "Liên Xô tuyên chiến với Nhật Bản và tấn công quân Quan Đông ở Mãn Châu, mở ra mặt trận mới.",
@@ -300,7 +300,7 @@ const ContextSection = () => {
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                       </div>
                     )}
-                    
+
                     <div className="p-6">
                       <div className="w-14 h-14 bg-gradient-to-br from-red-500 to-yellow-500 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
                         <event.icon className="w-7 h-7 text-white" />
@@ -325,6 +325,9 @@ const ContextSection = () => {
                 <Dialog.Portal>
                   <Dialog.Overlay className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50" />
                   <Dialog.Content className="fixed left-1/2 top-1/2 z-50 w-full max-w-4xl max-h-[85vh] -translate-x-1/2 -translate-y-1/2 rounded-2xl bg-gradient-to-br from-slate-900 to-slate-800 border border-white/20 p-8 overflow-y-auto">
+                    <Dialog.Title className="sr-only">
+                      {event.title}
+                    </Dialog.Title>
                     <Dialog.Close className="absolute right-6 top-6 rounded-full bg-white/10 p-2 text-white/70 hover:text-white hover:bg-white/20 transition-colors">
                       <X className="h-5 w-5" />
                     </Dialog.Close>
@@ -343,7 +346,7 @@ const ContextSection = () => {
                           </h2>
                         </div>
                       </div>
-                      
+
                       {/* Event Image */}
                       {event.imgUrl && (
                         <div className="mb-6 rounded-xl overflow-hidden">
@@ -509,7 +512,7 @@ const ContextSection = () => {
                     />
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent to-slate-900/60"></div>
                   </div>
-                  
+
                   {/* Content Section */}
                   <div className="flex-1 p-6">
                     <div className="flex items-center justify-between mb-4">
@@ -529,7 +532,9 @@ const ContextSection = () => {
                     <div className="w-full bg-gray-700 rounded-full h-2">
                       <motion.div
                         initial={{ width: 0 }}
-                        animate={isInView ? { width: `${phase.progress}%` } : {}}
+                        animate={
+                          isInView ? { width: `${phase.progress}%` } : {}
+                        }
                         transition={{ duration: 1, delay: 0.8 + index * 0.2 }}
                         className={`h-2 rounded-full bg-gradient-to-r ${
                           phase.color === "red"
@@ -583,7 +588,7 @@ const ContextSection = () => {
                           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
                         </div>
                       )}
-                      
+
                       {/* Content */}
                       <div className="relative z-10">
                         <div className="flex items-start space-x-4">
@@ -612,6 +617,9 @@ const ContextSection = () => {
                   <Dialog.Portal>
                     <Dialog.Overlay className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50" />
                     <Dialog.Content className="fixed left-1/2 top-1/2 z-50 w-full max-w-4xl max-h-[85vh] -translate-x-1/2 -translate-y-1/2 rounded-2xl bg-gradient-to-br from-slate-900 to-slate-800 border border-white/20 p-8 overflow-y-auto">
+                      <Dialog.Title className="sr-only">
+                        {event.title}
+                      </Dialog.Title>
                       <Dialog.Close className="absolute right-6 top-6 rounded-full bg-white/10 p-2 text-white/70 hover:text-white hover:bg-white/20 transition-colors">
                         <X className="h-5 w-5" />
                       </Dialog.Close>
@@ -630,7 +638,7 @@ const ContextSection = () => {
                             </h2>
                           </div>
                         </div>
-                        
+
                         {/* Event Image */}
                         {event.imgUrl && (
                           <div className="mb-6 rounded-xl overflow-hidden">

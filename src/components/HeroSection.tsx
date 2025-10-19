@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Calendar, MapPin, Users, Flag } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 const HeroSection = () => {
   const stats = [
@@ -11,7 +12,6 @@ const HeroSection = () => {
     { icon: Users, label: "Khởi nghĩa", value: "Toàn dân" },
     { icon: Flag, label: "Kết quả", value: "Độc lập" },
   ];
-
   return (
     <section id="hero" className="min-h-screen relative overflow-hidden">
       {/* Background Pattern */}
@@ -69,12 +69,19 @@ const HeroSection = () => {
               transition={{ delay: 0.8 }}
               className="flex flex-wrap gap-4"
             >
-              <button className="bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
+              <Link
+                href="/explore"
+                className="bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 hover:scale-105 shadow-lg inline-block text-center cursor-pointer relative z-10"
+              >
                 Khám phá lịch sử
-              </button>
-              <button className="border border-white/30 hover:border-white/60 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 hover:bg-white/10 backdrop-blur-sm">
+              </Link>
+
+              <a
+                href="#timeline"
+                className="border border-white/30 hover:border-white/60 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 hover:bg-white/10 backdrop-blur-sm"
+              >
                 Dòng thời gian
-              </button>
+              </a>
             </motion.div>
           </motion.div>
 

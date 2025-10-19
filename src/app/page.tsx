@@ -6,7 +6,6 @@ import ModernRelevanceSection from "@/components/ModernRelevanceSection";
 import SignificanceSection from "@/components/SignificanceSection";
 import TimelineSection from "@/components/TimelineSection";
 
-
 export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-red-900 to-amber-900">
