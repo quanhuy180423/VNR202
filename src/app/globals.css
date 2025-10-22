@@ -110,3 +110,14 @@ h1, h2, h3, h4, h5, h6 {
   outline: 2px solid #dc2626;
   outline-offset: 2px;
 }
+
+/* Scroll margin for sections to account for fixed header */
+section[id] {
+  scroll-margin-top: 5rem; /* 80px for desktop */
+}
+
+@media (max-width: 1024px) {
+  section[id] {
+    scroll-margin-top: 4rem; /* 64px for mobile */
+  }
+}

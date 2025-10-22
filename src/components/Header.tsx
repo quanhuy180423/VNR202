@@ -33,6 +33,36 @@ const Header = () => {
     return pathname === "/explore";
   };
 
+  // Function to handle smooth scroll
+  const handleSmoothNavigation = (href: string, isMobile = false) => {
+    const targetId = href.substring(1); // Loại bỏ #
+    const target = document.getElementById(targetId);
+
+    if (target) {
+      // Update URL hash
+      window.history.pushState(null, "", href);
+
+      // Dynamic header height calculation
+      const headerHeight = window.innerWidth >= 1024 ? 80 : 64;
+      const targetPosition = target.offsetTop - headerHeight;
+
+      const scrollAction = () => {
+        window.scrollTo({
+          top: Math.max(0, targetPosition),
+          behavior: "smooth",
+        });
+      };
+
+      if (isMobile) {
+        setIsMobileMenuOpen(false);
+        // Delay để đảm bảo menu đã đóng
+        setTimeout(scrollAction, 100);
+      } else {
+        scrollAction();
+      }
+    }
+  };
+
   return (
     <motion.header
       initial={{ y: -100 }}
@@ -43,7 +73,7 @@ const Header = () => {
           : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto px-4 lg:px-8">
+      <div className="w-full max-w-7xl mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <motion.div
@@ -85,8 +115,8 @@ const Header = () => {
                       </motion.span>
                     </Link>
                   ) : (
-                    <motion.a
-                      href={item.href}
+                    <motion.button
+                      onClick={() => handleSmoothNavigation(item.href)}
                       initial={{ opacity: 0, y: -20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: index * 0.1 }}
@@ -94,7 +124,7 @@ const Header = () => {
                       className="text-white hover:text-red-300 transition-colors duration-200 font-medium"
                     >
                       {item.label}
-                    </motion.a>
+                    </motion.button>
                   )}
                 </motion.div>
               );
@@ -141,13 +171,12 @@ const Header = () => {
                       {item.label}
                     </Link>
                   ) : (
-                    <a
-                      href={item.href}
-                      onClick={() => setIsMobileMenuOpen(false)}
-                      className="block px-4 py-2 text-white hover:text-red-300 hover:bg-red-900/20 transition-colors duration-200"
+                    <button
+                      onClick={() => handleSmoothNavigation(item.href, true)}
+                      className="block w-full text-left px-4 py-2 text-white hover:text-red-300 hover:bg-red-900/20 transition-colors duration-200"
                     >
                       {item.label}
-                    </a>
+                    </button>
                   )}
                 </div>
               );

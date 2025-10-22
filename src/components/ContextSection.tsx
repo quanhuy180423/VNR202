@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useInView } from "framer-motion";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import {
   Globe,
   Swords,
@@ -21,7 +21,7 @@ import Image from "next/image";
 
 const ContextSection = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.2 });
+  const isInView = useInView(ref, { once: true, amount: 0.1 });
 
   const globalCrisisEvents = [
     {
@@ -242,11 +242,15 @@ const ContextSection = () => {
   ];
 
   return (
-    <section id="context" ref={ref} className="py-20 lg:py-32 relative">
+    <section
+      id="context"
+      ref={ref}
+      className="py-12 sm:py-16 lg:py-32 relative overflow-hidden"
+    >
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-slate-900/50 to-red-900/50"></div>
 
-      <div className="container mx-auto px-4 lg:px-8 relative z-10">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -277,7 +281,7 @@ const ContextSection = () => {
             Lò Luyện Cách Mạng: 1930-1945
           </h3>
 
-          <div className="grid lg:grid-cols-2 xl:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-4 sm:gap-6">
             {globalCrisisEvents.map((event, index) => (
               <Dialog.Root key={index}>
                 <Dialog.Trigger asChild>
@@ -554,7 +558,7 @@ const ContextSection = () => {
           </div>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
           {/* Left: World Context 1945 */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -854,7 +858,7 @@ const ContextSection = () => {
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 1.0 }}
-          className="mt-20 grid grid-cols-2 lg:grid-cols-4 gap-6"
+          className="mt-12 sm:mt-16 lg:mt-20 grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6"
         >
           <div className="text-center bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
             <div className="text-3xl font-bold text-red-400 mb-2">1929</div>
