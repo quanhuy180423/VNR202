@@ -12,7 +12,7 @@ const ModernRelevanceSection = () => {
     {
       icon: Shield,
       title: "Chống đại dịch COVID-19",
-      description: "Tinh thần \"chống dịch như chống giặc\"",
+      description: 'Tinh thần "chống dịch như chống giặc"',
       details:
         "Toàn dân đoàn kết, y bác sĩ tình nguyện, chia sẻ khó khăn cùng nhau vượt qua đại dịch",
       year: "2020-2022",
@@ -20,7 +20,7 @@ const ModernRelevanceSection = () => {
     {
       icon: Heart,
       title: "Thiên tai bão lũ",
-      description: "Tinh thần \"lá lành đùm lá rách\"",
+      description: 'Tinh thần "lá lành đùm lá rách"',
       details:
         "Cả nước hướng về miền Trung, quyên góp, cứu trợ, xây dựng lại vùng bão lũ",
       year: "Hàng năm",
@@ -226,8 +226,7 @@ const ModernRelevanceSection = () => {
             Với tinh thần Cách mạng tháng Tám, chúng ta tiếp tục đoàn kết, phấn
             đấu xây dựng một Việt Nam phồn vinh, hạnh phúc và hùng cường
           </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          {/* <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center space-x-2">
               <span>Tìm hiểu thêm</span>
               <ArrowRight className="w-5 h-5" />
@@ -235,7 +234,47 @@ const ModernRelevanceSection = () => {
             <button className="border border-white/30 hover:border-white/60 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 hover:bg-white/10 backdrop-blur-sm">
               Chia sẻ câu chuyện
             </button>
+          </div> */}
+          <div
+            style={{
+              position: "relative",
+              width: "100%",
+              height: 0,
+              paddingTop: "56.25%",
+              paddingBottom: 0,
+              boxShadow: "0 2px 8px 0 rgba(63,69,81,0.16)",
+              marginTop: "1.6em",
+              marginBottom: "0.9em",
+              overflow: "hidden",
+              borderRadius: "8px",
+              willChange: "transform",
+            }}
+          >
+            <iframe
+              loading="lazy"
+              style={{
+                position: "absolute",
+                width: "100%",
+                height: "100%",
+                top: 0,
+                left: 0,
+                border: "none",
+                padding: 0,
+                margin: 0,
+              }}
+              src="https://www.canva.com/design/DAG2g8kJXhI/uX7W8lTUvFvnODJBMg_2aA/view?embed"
+              allowFullScreen
+              allow="fullscreen"
+              title="Cách mạng tháng 8 năm 1945"
+            ></iframe>
           </div>
+          <a
+            href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAG2g8kJXhI&#x2F;uX7W8lTUvFvnODJBMg_2aA&#x2F;view?utm_content=DAG2g8kJXhI&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link"
+            target="_blank"
+            rel="noopener"
+          >
+            CÁCH MẠNG THÁNG 8 NĂM 1945
+          </a>
         </motion.div>
       </div>
     </section>
