@@ -24,7 +24,6 @@ const TimelineSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.1 });
   const [selectedEvent, setSelectedEvent] = useState(0);
-  const [selectedPreparation, setSelectedPreparation] = useState(null);
 
   // 15-year preparation phases (1930-1945)
   const preparationPhases = [
@@ -37,7 +36,7 @@ const TimelineSection = () => {
       color: "red",
       progress: 20,
       imgUrl:
-        "https://nld.mediacdn.vn/2020/2/3/dang-cong-san-viet-nam-ra-doi-15807892076481528607632.jpg",
+        "https://www.ntu.edu.vn/uploads/56/images/news/9115/img/dang-cong-san-viet-nam-ra-doi-la-buoc-ngoat-v-dai-trong-lich-su-cach-mang-viet-n.jpg",
       detailedContent: {
         overview:
           "Sự kiện Đảng Cộng sản Việt Nam ra đời vào ngày 3 tháng 2 năm 1930 là một bước ngoặt lịch sử vĩ đại, chấm dứt cuộc khủng hoảng sâu sắc về đường lối cứu nước kéo dài hàng thập kỷ ở Việt Nam.",
@@ -119,7 +118,7 @@ const TimelineSection = () => {
       icon: SwordsIcon,
       color: "red",
       imgUrl:
-        "https://nld.mediacdn.vn/2020/3/9/nhat-dao-chinh-phap-15838072776471924411639.jpg",
+        "https://ordi.vn/wp-content/uploads/2022/08/Hanoi1945-768x499.jpg",
       details:
         "Cuộc đảo chính này đã loại bỏ kẻ thù trực tiếp của cách mạng Việt Nam và tạo ra cơ hội cho phong trào kháng Nhật cứu nước phát triển mạnh mẽ.",
       detailedContent: {
@@ -138,7 +137,8 @@ const TimelineSection = () => {
       description: "Đảng quyết định phát động Tổng khởi nghĩa toàn quốc",
       icon: Users,
       color: "yellow",
-      imgUrl: "https://tuyengiao.vn/Uploads/2023/8/15/33/hoi-nghi-tan-trao.jpg",
+      imgUrl:
+        "https://th.bing.com/th/id/R.34c6b9be91fdcbcadc0fe72d0b7bf12d?rik=zxZCcDBhielosw&riu=http%3a%2f%2fbaohagiang.vn%2ffile%2fdataimages%2f202008%2foriginal%2fimages1468141_daihoitantrao1.jpg&ehk=q2kaRKw%2fBBAyPq1ZfbUI9naq0zwWh4N5rS5o%2fM31zKo%3d&risl=&pid=ImgRaw&r=0",
       details:
         "Hội nghị toàn quốc của Đảng tại Tân Trào quyết định thành lập Ủy ban Khởi nghĩa toàn quốc và ban bố Quân lệnh số 1.",
       detailedContent: {
@@ -161,7 +161,7 @@ const TimelineSection = () => {
       icon: Flag,
       color: "green",
       imgUrl:
-        "https://tuyengiao.vn/Uploads/2020/8/18/33/khoi-nghia-ha-noi-2.jpg",
+        "https://consosukien.vn/pic/News/Nam_2020/cach-mang-thang-tam-tong-khoi-nghia-gianh-chinh-quyen.jpg",
       details:
         "Thắng lợi tại Hà Nội có ý nghĩa quyết định, mở đường cho cả nước và tạo hiệu ứng domino lan tỏa toàn quốc.",
       detailedContent: {
@@ -183,7 +183,7 @@ const TimelineSection = () => {
       icon: Crown,
       color: "purple",
       imgUrl:
-        "https://baotayninh.vn/Uploads/Images/2021/8/23/23/vua-bao-dai-thoai-vi.jpg",
+        "https://vnanet.vn/Data/Articles/2020/08/17/4966485/vna_potal_75_nam_cach_mang_thang_tam_va_quoc_khanh_2-9_1945_-_2020_buoc_ngoat_vi_dai_trong_lich_su_dan_toc_viet_nam_stand.jpg",
       details:
         "Thắng lợi ở Huế mang ý nghĩa biểu tượng to lớn, chấm dứt chế độ phong kiến hàng ngàn năm của Việt Nam.",
       detailedContent: {
@@ -205,7 +205,7 @@ const TimelineSection = () => {
       icon: MapPin,
       color: "blue",
       imgUrl:
-        "https://nld.mediacdn.vn/2015/8/25/khoi-nghia-o-sai-gon-1440433336797.jpg",
+        "https://baobinhduong.vn/image/news/2013/20130824/thumbnail/475x300/7471.1406049813.jpg",
       details:
         "Cuộc khởi nghĩa quy mô lớn nhất, thể hiện sức mạnh đoàn kết của nhân dân Nam Bộ và các tỉnh lân cận.",
       detailedContent: {
@@ -227,7 +227,7 @@ const TimelineSection = () => {
       icon: Flag,
       color: "red",
       imgUrl:
-        "https://cdn.tgdd.vn/Files/2022/07/26/1450679/nguon-goc-y-nghia-ngay-cach-mang-thang-tam-thanh-cong-202207262209323836.jpg",
+        "https://tse4.mm.bing.net/th/id/OIP.YZvNcvg-JrozanXY4wtdUwHaEm?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3",
       details:
         "Tại Quảng trường Ba Đình, nước Việt Nam Dân chủ Cộng hòa chính thức ra đời trước toàn thế giới.",
       detailedContent: {
@@ -352,6 +352,7 @@ const TimelineSection = () => {
 
                 <Dialog.Portal>
                   <Dialog.Overlay className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50" />
+                  <Dialog.Title className="sr-only">{phase.title}</Dialog.Title>
                   <Dialog.Content className="fixed left-1/2 top-1/2 z-50 w-full max-w-4xl max-h-[90vh] -translate-x-1/2 -translate-y-1/2 rounded-2xl bg-gradient-to-br from-slate-900 to-slate-800 border border-white/20 p-8 overflow-y-auto">
                     <Dialog.Close className="absolute right-6 top-6 rounded-full bg-white/10 p-2 text-white/70 hover:text-white hover:bg-white/20 transition-colors">
                       <X className="h-5 w-5" />
@@ -375,7 +376,7 @@ const TimelineSection = () => {
                       </div>
 
                       {/* Phase Image */}
-                      {phase.imgUrl && (
+                      {/* {phase.imgUrl && (
                         <div className="mb-6 rounded-xl overflow-hidden">
                           <Image
                             src={phase.imgUrl}
@@ -385,7 +386,7 @@ const TimelineSection = () => {
                             className="w-full h-64 object-cover"
                           />
                         </div>
-                      )}
+                      )} */}
                     </div>
 
                     <div className="space-y-6 text-gray-300">
@@ -580,6 +581,9 @@ const TimelineSection = () => {
 
                       <Dialog.Portal>
                         <Dialog.Overlay className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50" />
+                        <Dialog.Title className="sr-only">
+                          {event.title}
+                        </Dialog.Title>
                         <Dialog.Content className="fixed left-1/2 top-1/2 z-50 w-full max-w-4xl max-h-[90vh] -translate-x-1/2 -translate-y-1/2 rounded-2xl bg-gradient-to-br from-slate-900 to-slate-800 border border-white/20 p-8 overflow-y-auto">
                           <Dialog.Close className="absolute right-6 top-6 rounded-full bg-white/10 p-2 text-white/70 hover:text-white hover:bg-white/20 transition-colors">
                             <X className="h-5 w-5" />

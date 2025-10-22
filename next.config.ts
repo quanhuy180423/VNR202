@@ -165,6 +165,19 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "nghiencuuquocte.org",
       },
+      // TimelineSection domains
+      {
+        protocol: "https",
+        hostname: "ordi.vn",
+      },
+      {
+        protocol: "https",
+        hostname: "consosukien.vn",
+      },
+      {
+        protocol: "https",
+        hostname: "baobinhduong.vn",
+      },
     ],
   },
 };
